@@ -76,3 +76,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/compass',
         builder: (context, state) => const CompassScreen(),
       ),
+      GoRoute(
+        path: '/ocr',
+        builder: (context, state) => const OcrScreen(),
+      ),
+      GoRoute(
+        path: '/image-compressor',
+        builder: (context, state) => const ImageCompressorScreen(),
+      ),
+      GoRoute(
+        path: '/image-resizer',
+        builder: (context, state) => const ImageResizerScreen(),
+      ),
