@@ -60,3 +60,19 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/uuid-generator',
         builder: (context, state) => const UuidGeneratorScreen(),
       ),
+      GoRoute(
+        path: '/device-info',
+        builder: (context, state) => const DeviceInfoScreen(),
+      ),
+      GoRoute(
+        path: '/battery-info',
+        builder: (context, state) => const BatteryInfoScreen(),
+      ),
+      GoRoute(
+        path: '/flashlight',
+        builder: (context, state) => const FlashlightScreen(),
+      ),
+      GoRoute(
+        path: '/compass',
+        builder: (context, state) => const CompassScreen(),
+      ),
