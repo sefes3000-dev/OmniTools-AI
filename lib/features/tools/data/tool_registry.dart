@@ -53,3 +53,35 @@ class ToolRegistry {
     ),
   ];
 }
+    const ToolModel(
+      id: 'text_counter',
+      title: 'Text Counter',
+      description: 'Count words, characters, and lines',
+      icon: Icons.numbers,
+      category: ToolCategory.utilities,
+      routePath: '/text-counter',
+    ),
+    const ToolModel(
+      id: 'case_converter',
+      title: 'Case Converter',
+      description: 'Convert upper, lower, capital cases',
+      icon: Icons.text_fields,
+      category: ToolCategory.utilities,
+      routePath: '/case-converter',
+    ),
+    const ToolModel(
+      id: 'json_formatter',
+      title: 'JSON Formatter',
+      description: 'Format and beautify JSON strings',
+      icon: Icons.data_object,
+      category: ToolCategory.developerTools,
+      routePath: '/json-formatter',
+    ),
+    const ToolModel(
+      id: 'uuid_generator',
+      title: 'UUID Generator',
+      description: 'Generate v4 UUID strings',
+      icon: Icons.fingerprint,
+      category: ToolCategory.developerTools,
+      routePath: '/uuid-generator',
+    ),
