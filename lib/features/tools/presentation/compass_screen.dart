@@ -15,7 +15,7 @@ class _CompassScreenState extends State<CompassScreen> {
   @override
   void initState() {
     super.initState();
-    FlutterCompass.headingStream?.listen((event) {
+    FlutterCompass.events?.listen((event) {
       if (mounted) {
         setState(() => _heading = event.heading);
       }
