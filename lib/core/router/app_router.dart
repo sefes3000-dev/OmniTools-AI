@@ -88,3 +88,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/image-resizer',
         builder: (context, state) => const ImageResizerScreen(),
       ),
+      GoRoute(
+        path: '/pdf-creator',
+        builder: (context, state) => const PdfCreatorScreen(),
+      ),
+      GoRoute(
+        path: '/pdf-merger',
+        builder: (context, state) => const PdfMergerScreen(),
+      ),
+      GoRoute(
+        path: '/pdf-splitter',
+        builder: (context, state) => const PdfSplitterScreen(),
+      ),
