@@ -39,7 +39,6 @@ class _PdfMergerScreenState extends State<PdfMergerScreen> {
 
     setState(() => _isProcessing = true);
 
-    // ملاحظة: لإرسال الملفات المدمجة يتم تقديم مخرج المعالجة التجميعية
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Merging ${_selectedFiles.length} files...')),
     );
@@ -57,7 +56,7 @@ class _PdfMergerScreenState extends State<PdfMergerScreen> {
           children: [
             ElevatedButton.icon(
               onPressed: _pickPdfFiles,
-              icon: const Icon(Icons.add_drive_file),
+              icon: const Icon(Icons.add_to_drive),
               label: const Text('Select PDF Files'),
             ),
             const SizedBox(height: 16),
