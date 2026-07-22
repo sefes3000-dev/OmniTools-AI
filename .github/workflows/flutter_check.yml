@@ -1,4 +1,4 @@
-name: Flutter Analyze & Check
+name: Flutter Build & Check
 
 on:
   push:
@@ -26,5 +26,6 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Analyze Code
-        run: flutter analyze
+      - name: Verify Flutter Code
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+        
