@@ -1,59 +1,83 @@
 import 'package:flutter/material.dart';
-import '../domain/models/tool_model.dart';
+
+enum ToolCategory {
+  utilities,
+  developerTools,
+  phoneTools,
+  imageTools,
+  pdfTools,
+}
+
+class ToolModel {
+  final String id;
+  final String title;
+  final String description;
+  final IconData icon;
+  final ToolCategory category;
+  final String routePath;
+
+  const ToolModel({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.icon,
+    required this.category,
+    required this.routePath,
+  });
+}
 
 class ToolRegistry {
-  static final List<ToolModel> allTools = [
-    const ToolModel(
+  static const List<ToolModel> allTools = [
+    // Developer & Utility Tools
+    ToolModel(
       id: 'password_generator',
       title: 'Password Generator',
-      description: 'Create secure passwords easily',
-      icon: Icons.lock_outline,
-      category: ToolCategory.securityTools,
+      description: 'Generate secure passwords',
+      icon: Icons.lock,
+      category: ToolCategory.developerTools,
       routePath: '/password-generator',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'hash_generator',
       title: 'Hash Generator',
-      description: 'Generate MD5, SHA-1, SHA-256 hashes',
+      description: 'MD5, SHA1, SHA256 hashes',
       icon: Icons.security,
-      category: ToolCategory.securityTools,
+      category: ToolCategory.developerTools,
       routePath: '/hash-generator',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'qr_generator',
-      title: 'QR Generator',
+      title: 'QR Code Generator',
       description: 'Generate custom QR codes',
       icon: Icons.qr_code,
-      category: ToolCategory.developerTools,
+      category: ToolCategory.utilities,
       routePath: '/qr-generator',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'base64',
-      title: 'Base64 Encoder/Decoder',
-      description: 'Encode or decode text string to Base64',
+      title: 'Base64 Encoder',
+      description: 'Encode and decode Base64 text',
       icon: Icons.code,
       category: ToolCategory.developerTools,
       routePath: '/base64',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'bmi_calculator',
       title: 'BMI Calculator',
-      description: 'Calculate Body Mass Index',
-      icon: Icons.monitor_weight_outlined,
-      category: ToolCategory.calculators,
+      description: 'Calculate body mass index',
+      icon: Icons.fitness_center,
+      category: ToolCategory.utilities,
       routePath: '/bmi-calculator',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'unit_converter',
       title: 'Unit Converter',
-      description: 'Convert length, weight, and temperature',
-      icon: Icons.sync_alt,
-      category: ToolCategory.calculators,
+      description: 'Convert common measurement units',
+      icon: Icons.square_foot,
+      category: ToolCategory.utilities,
       routePath: '/unit-converter',
     ),
-  ];
-}
-    const ToolModel(
+    ToolModel(
       id: 'text_counter',
       title: 'Text Counter',
       description: 'Count words, characters, and lines',
@@ -61,7 +85,7 @@ class ToolRegistry {
       category: ToolCategory.utilities,
       routePath: '/text-counter',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'case_converter',
       title: 'Case Converter',
       description: 'Convert upper, lower, capital cases',
@@ -69,7 +93,7 @@ class ToolRegistry {
       category: ToolCategory.utilities,
       routePath: '/case-converter',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'json_formatter',
       title: 'JSON Formatter',
       description: 'Format and beautify JSON strings',
@@ -77,7 +101,7 @@ class ToolRegistry {
       category: ToolCategory.developerTools,
       routePath: '/json-formatter',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'uuid_generator',
       title: 'UUID Generator',
       description: 'Generate v4 UUID strings',
@@ -85,15 +109,17 @@ class ToolRegistry {
       category: ToolCategory.developerTools,
       routePath: '/uuid-generator',
     ),
-    const ToolModel(
+
+    // Phone Tools
+    ToolModel(
       id: 'device_info',
       title: 'Device Info',
-      description: 'View device hardware and OS specs',
+      description: 'View device hardware specs',
       icon: Icons.phone_android,
       category: ToolCategory.phoneTools,
       routePath: '/device-info',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'battery_info',
       title: 'Battery Info',
       description: 'Check battery status and level',
@@ -101,7 +127,7 @@ class ToolRegistry {
       category: ToolCategory.phoneTools,
       routePath: '/battery-info',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'flashlight',
       title: 'Flashlight',
       description: 'Toggle device flashlight',
@@ -109,7 +135,7 @@ class ToolRegistry {
       category: ToolCategory.utilities,
       routePath: '/flashlight',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'compass',
       title: 'Compass',
       description: 'Direction compass sensor',
@@ -117,15 +143,17 @@ class ToolRegistry {
       category: ToolCategory.utilities,
       routePath: '/compass',
     ),
-    const ToolModel(
+
+    // Image Tools
+    ToolModel(
       id: 'ocr',
       title: 'OCR Text Scanner',
-      description: 'Extract text from images & camera',
+      description: 'Extract text from images',
       icon: Icons.document_scanner,
       category: ToolCategory.imageTools,
       routePath: '/ocr',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'image_compressor',
       title: 'Image Compressor',
       description: 'Reduce image file size',
@@ -133,7 +161,7 @@ class ToolRegistry {
       category: ToolCategory.imageTools,
       routePath: '/image-compressor',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'image_resizer',
       title: 'Image Resizer',
       description: 'Change image dimensions',
@@ -141,7 +169,9 @@ class ToolRegistry {
       category: ToolCategory.imageTools,
       routePath: '/image-resizer',
     ),
-    const ToolModel(
+
+    // PDF Tools
+    ToolModel(
       id: 'pdf_creator',
       title: 'PDF Creator',
       description: 'Create PDF files from custom text',
@@ -149,15 +179,15 @@ class ToolRegistry {
       category: ToolCategory.pdfTools,
       routePath: '/pdf-creator',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'pdf_merger',
       title: 'PDF Merger',
-      description: 'Combine multiple PDF files into one',
+      description: 'Combine multiple PDF files',
       icon: Icons.merge_type,
       category: ToolCategory.pdfTools,
       routePath: '/pdf-merger',
     ),
-    const ToolModel(
+    ToolModel(
       id: 'pdf_splitter',
       title: 'PDF Splitter',
       description: 'Extract pages from PDF file',
@@ -165,3 +195,5 @@ class ToolRegistry {
       category: ToolCategory.pdfTools,
       routePath: '/pdf-splitter',
     ),
+  ];
+}
