@@ -44,3 +44,19 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     ],
   );
 });
+      GoRoute(
+        path: '/text-counter',
+        builder: (context, state) => const TextCounterScreen(),
+      ),
+      GoRoute(
+        path: '/case-converter',
+        builder: (context, state) => const CaseConverterScreen(),
+      ),
+      GoRoute(
+        path: '/json-formatter',
+        builder: (context, state) => const JsonFormatterScreen(),
+      ),
+      GoRoute(
+        path: '/uuid-generator',
+        builder: (context, state) => const UuidGeneratorScreen(),
+      ),
