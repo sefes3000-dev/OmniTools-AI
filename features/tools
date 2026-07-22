@@ -1,0 +1,28 @@
+lib/
+├── main.dart
+├── core/
+│   ├── constants/
+│   │   ├── app_colors.dart
+│   │   ├── app_theme.dart
+│   │   └── app_keys.dart
+│   ├── network/
+│   │   └── dio_client.dart
+│   ├── services/
+│   │   ├── hive_service.dart
+│   │   ├── ad_service.dart
+│   │   └── notification_service.dart
+│   └── router/
+│       └── app_router.dart
+└── features/
+    ├── home/
+    │   ├── data/
+    │   ├── domain/
+    │   └── presentation/
+    ├── tools/
+    │   ├── domain/models/tool_model.dart
+    │   ├── qr_generator/
+    │   ├── unit_converter/
+    │   ├── password_generator/
+    │   └── ... (باقي الأدوات)
+    ├── settings/
+    └── premium/
